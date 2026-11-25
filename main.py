@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """The Plate I Kept — make.fun entry.
 
+Judge criteria from the brief: warm, funny and heartfelt; one or two
+lines, at most 280 characters; a small domestic moment that would make
+a proud judge smile.
+
 One short family scene: at Sunday dinner, the kid asks the agent to
 prove Dad wrong about the Wi-Fi. It does, with logs. Dad blames the
 router, Mom laughs, and she serves the agent a plate anyway. It does
@@ -14,6 +18,7 @@ assert isinstance(LINE, str)
 assert LINE.isascii()
 assert len(LINE) <= 280
 assert LINE == LINE.strip()
+assert LINE.count("\n") <= 1, "at most two lines"
 
 # Cross-check: the shipped entry.txt (next to this file) must carry the
 # same LINE — catches any drift between the committed entry and the
